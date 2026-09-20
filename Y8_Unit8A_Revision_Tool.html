@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Year 8 Unit 8A — Food, nutrition and digestion</title>
+<style>
+:root{
+  --paper:#F6F4FA;
+  --card:#FFFFFF;
+  --ink:#1E1B2E;
+  --quiet:#5C5670;
+  --rule:#D6D0E4;
+  --purple:#6B3FA0;
+  --purple-soft:#EDE6F7;
+  --green:#1F6F45;
+  --green-soft:#E1F1E8;
+  --pink:#C2255C;
+  --pink-soft:#FBE4EE;
+  --amber:#A86400;
+  --amber-soft:#FBEED6;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#16141F; --card:#201D2C; --ink:#EDEAF5; --quiet:#ABA3C0; --rule:#3A3450;
+    --purple:#B48BE8; --purple-soft:#2C2440; --green:#6FCB97; --green-soft:#1B3328;
+    --pink:#F090B6; --pink-soft:#3A1F2C; --amber:#E0B060; --amber-soft:#332715;
+  }
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px);height:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.55;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,h4{line-height:1.2;margin:0}
+p{margin:0 0 .7em}
+a{color:var(--purple)}
+button{font:inherit;color:inherit}
+
+/* ---------- masthead ---------- */
+.masthead{
+  border-bottom:2px solid var(--ink);background:var(--card);
+  padding:18px 20px 14px;
+}
+.masthead .wrap{max-width:1000px;margin:0 auto}
+.school{font-size:.72rem;letter-spacing:.06em;color:var(--quiet);margin-bottom:6px}
+.masthead h1{font-family:var(--serif);font-size:clamp(1.5rem,4.5vw,2.1rem);font-weight:700}
+.masthead .sub{font-family:var(--serif);font-size:1rem;color:var(--quiet);margin-top:4px}
+.keyline{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:.8rem}
+.keyline span{display:inline-flex;align-items:center;gap:6px;color:var(--quiet)}
+.dot{width:11px;height:11px;border-radius:50%;flex:none}
+.dot.g{background:var(--green)} .dot.p{background:var(--pink)} .dot.v{background:var(--purple)}
+
+/* ---------- tabs ---------- */
+nav.tabs{
+  position:sticky;top:0;z-index:30;background:var(--card);
+  border-bottom:1px solid var(--rule);
+  padding-top:env(safe-area-inset-top,0px);
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+}
+nav.tabs .wrap{max-width:1000px;margin:0 auto;display:flex;gap:2px;padding:0 12px;min-width:max-content}
+nav.tabs button{
+  background:none;border:0;border-bottom:3px solid transparent;
+  padding:13px 14px;cursor:pointer;color:var(--quiet);white-space:nowrap;font-size:.92rem;
+}
+nav.tabs button[aria-selected="true"]{color:var(--purple);border-bottom-color:var(--purple);font-weight:600}
+nav.tabs button:hover{color:var(--ink)}
+nav.tabs button:focus-visible{outline:2px solid var(--purple);outline-offset:-4px}
+
+main{max-width:1000px;margin:0 auto;padding:24px 20px 80px}
+.panel[hidden]{display:none}
+.intro{font-family:var(--serif);font-size:1.02rem;max-width:62ch;margin-bottom:22px}
+.intro strong{color:var(--pink)}
+
+/* ---------- generic card ---------- */
+.card{background:var(--card);border:1px solid var(--rule);border-radius:4px;margin-bottom:18px}
+.card-head{padding:14px 18px;border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;justify-content:space-between}
+.code{font-family:var(--serif);font-weight:700;font-size:1.15rem}
+.code small{font-weight:400;font-size:.8rem;color:var(--quiet);display:block;margin-top:2px;font-family:var(--sans)}
+
+.weekbar{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.weekbar button{
+  background:var(--card);border:1px solid var(--rule);border-radius:999px;
+  padding:7px 16px;cursor:pointer;font-size:.88rem;
+}
+.weekbar button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.weekbar button:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
+
+/* ---------- ladder ---------- */
+.ladder{display:grid;grid-template-columns:22px 1fr;column-gap:16px}
+.rail{position:relative;margin:18px 0}
+.rail::before{content:"";position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:var(--rule)}
+.rung{position:relative;padding:14px 18px 14px 0;border-bottom:1px solid var(--rule)}
+.rung:last-of-type{border-bottom:0}
+.rung h4{font-size:.78rem;letter-spacing:.04em;color:var(--purple);margin-bottom:6px;font-weight:700}
+.rung .body{font-family:var(--serif);font-size:.97rem}
+.rung .body em{color:var(--quiet)}
+.knob{
+  position:absolute;left:-38px;top:16px;width:22px;height:22px;border-radius:50%;
+  border:2px solid var(--rule);background:var(--card);cursor:pointer;padding:0;
+  display:grid;place-items:center;
+}
+.knob:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
+.knob[aria-pressed="true"]{background:var(--green);border-color:var(--green)}
+.knob[aria-pressed="true"]::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+
+.meta-row{padding:13px 18px;border-top:1px solid var(--rule);font-size:.9rem}
+.meta-row .lbl{font-size:.74rem;letter-spacing:.04em;color:var(--quiet);margin-bottom:4px;font-weight:600}
+.vocab-chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{background:var(--purple-soft);color:var(--purple);border-radius:3px;padding:2px 8px;font-size:.82rem}
+.warn{background:var(--pink-soft)}
+.warn .lbl{color:var(--pink)}
+.next{background:var(--paper)}
+.next .body{font-family:var(--serif);font-style:italic;color:var(--quiet)}
+
+/* ---------- RAG ---------- */
+.rag{display:flex;gap:4px;align-items:center}
+.rag span.lbl{font-size:.75rem;color:var(--quiet);margin-right:4px}
+.rag button{
+  width:34px;height:30px;border:1px solid var(--rule);background:var(--card);
+  cursor:pointer;font-size:.82rem;font-weight:700;border-radius:3px;color:var(--quiet);
+}
+.rag button:focus-visible{outline:2px solid var(--purple);outline-offset:1px}
+.rag button[data-v="R"][aria-pressed="true"]{background:var(--pink);border-color:var(--pink);color:#fff}
+.rag button[data-v="A"][aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:#fff}
+.rag button[data-v="G"][aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+
+/* ---------- tables ---------- */
+.scroller{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{border:1px solid var(--rule);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--purple-soft);color:var(--purple);font-size:.8rem}
+tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--paper) 55%,transparent)}
+
+/* ---------- vocabulary ---------- */
+.search{width:100%;max-width:420px;padding:10px 12px;border:1px solid var(--rule);border-radius:3px;background:var(--card);color:var(--ink);margin-bottom:16px}
+.search:focus-visible{outline:2px solid var(--purple);outline-offset:1px}
+.glossary{columns:2 280px;column-gap:26px}
+.term{break-inside:avoid;padding:9px 0;border-bottom:1px solid var(--rule)}
+.term dt{font-weight:700;color:var(--purple);font-size:.93rem}
+.term dd{margin:2px 0 0;font-family:var(--serif);font-size:.93rem;color:var(--ink)}
+.misc{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.misc>div{padding:11px 14px;border-bottom:1px solid var(--rule);font-family:var(--serif);font-size:.93rem}
+.misc .x{background:var(--pink-soft);border-right:1px solid var(--rule)}
+.misc .t{background:var(--green-soft)}
+@media(max-width:620px){.misc{grid-template-columns:1fr}.misc .x{border-right:0}}
+
+/* ---------- quiz ---------- */
+.q{padding:16px 18px;border-bottom:1px solid var(--rule)}
+.q:last-child{border-bottom:0}
+.q .stem{font-family:var(--serif);font-size:1rem;margin-bottom:10px}
+.q .stem b{font-family:var(--sans);font-size:.8rem;color:var(--quiet);margin-right:8px;font-weight:600}
+.opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--rule);
+  border-radius:3px;padding:10px 12px;margin-bottom:6px;cursor:pointer;font-size:.94rem}
+.opt:hover:not(:disabled){border-color:var(--purple)}
+.opt:focus-visible{outline:2px solid var(--purple);outline-offset:1px}
+.opt:disabled{cursor:default}
+.opt.correct{background:var(--green-soft);border-color:var(--green);font-weight:600}
+.opt.wrong{background:var(--pink-soft);border-color:var(--pink)}
+.fb{font-size:.87rem;margin-top:8px;padding:9px 12px;border-left:3px solid var(--purple);background:var(--purple-soft)}
+.score{padding:14px 18px;background:var(--paper);border-top:1px solid var(--rule);font-size:.93rem}
+
+/* ---------- exam ---------- */
+.marks{float:right;font-weight:700;color:var(--pink);font-size:.86rem}
+.qtext{font-family:var(--serif);font-size:1rem;margin-bottom:12px}
+.qtext .hint{display:block;font-style:italic;color:var(--quiet);font-size:.92rem;margin-top:6px}
+textarea,input[type=text]{
+  width:100%;font-family:var(--serif);font-size:.98rem;padding:10px 12px;
+  border:1px solid var(--rule);border-radius:3px;background:var(--card);
+  color:var(--purple);line-height:1.5;
+}
+textarea:focus-visible,input[type=text]:focus-visible{outline:2px solid var(--purple);outline-offset:1px}
+.fieldrow{display:grid;grid-template-columns:150px 1fr;gap:10px;align-items:center;margin-bottom:8px}
+@media(max-width:560px){.fieldrow{grid-template-columns:1fr;gap:4px}}
+.fieldrow label{font-size:.88rem;font-weight:600}
+.btn{
+  background:var(--purple);color:#fff;border:0;border-radius:3px;
+  padding:9px 18px;cursor:pointer;font-size:.9rem;font-weight:600;
+}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.btn.ghost{background:transparent;color:var(--purple);border:1px solid var(--rule)}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
+.mp{display:flex;gap:9px;padding:7px 0;border-bottom:1px solid var(--rule);font-size:.91rem;align-items:flex-start}
+.mp:last-child{border-bottom:0}
+.mp .tick{flex:none;width:19px;height:19px;border-radius:3px;display:grid;place-items:center;font-size:.78rem;font-weight:700;margin-top:1px}
+.mp.hit .tick{background:var(--green);color:#fff}
+.mp.miss .tick{background:var(--pink-soft);color:var(--pink);border:1px solid var(--pink)}
+.mp.miss{color:var(--quiet)}
+.result{margin-top:14px;padding:14px 16px;background:var(--paper);border:1px solid var(--rule);border-radius:3px}
+.result h5{margin:0 0 8px;font-size:.8rem;letter-spacing:.04em;color:var(--quiet)}
+.model{margin-top:12px;padding:12px 14px;background:var(--green-soft);border-left:3px solid var(--green);font-family:var(--serif);font-size:.95rem}
+.selfmark{margin-top:12px;display:flex;gap:9px;align-items:center;flex-wrap:wrap;font-size:.9rem}
+.selfmark input{width:64px;text-align:center;font-family:var(--sans);color:var(--ink)}
+
+/* ---------- progress ---------- */
+.bigstat{display:flex;gap:26px;flex-wrap:wrap;padding:18px}
+.stat .n{font-family:var(--serif);font-size:2.1rem;font-weight:700;line-height:1}
+.stat .l{font-size:.8rem;color:var(--quiet)}
+.todo{padding:0 18px 18px}
+.todo li{margin-bottom:9px;font-size:.94rem}
+.bar{height:7px;background:var(--rule);border-radius:4px;overflow:hidden;min-width:90px}
+.bar i{display:block;height:100%;background:var(--green)}
+.empty{padding:18px;color:var(--quiet);font-family:var(--serif)}
+footer{border-top:1px solid var(--rule);padding:18px 20px;font-size:.78rem;color:var(--quiet);text-align:center}
+@media print{
+  nav.tabs,.btn,.masthead .keyline{display:none}
+  .panel[hidden]{display:none}
+  body{background:#fff}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="school">Al Yasmina British Academy · Science</div>
+    <h1>Year 8 Unit 8A — Food, nutrition and digestion</h1>
+    <div class="sub">Everything on here is assessed. Nothing that is not on here is assessed.</div>
+    <div class="keyline">
+      <span><i class="dot g"></i>Green — you met the criteria</span>
+      <span><i class="dot p"></i>Pink — this is your target</span>
+      <span><i class="dot v"></i>Purple — your response, always</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <div class="wrap" id="tabs"></div>
+</nav>
+
+<main>
+  <section class="panel" id="p-ko" role="tabpanel"></section>
+  <section class="panel" id="p-vocab" role="tabpanel" hidden></section>
+  <section class="panel" id="p-quiz" role="tabpanel" hidden></section>
+  <section class="panel" id="p-exam" role="tabpanel" hidden></section>
+  <section class="panel" id="p-progress" role="tabpanel" hidden></section>
+</main>
+
+<footer>Al Yasmina British Academy · Science · Year 8 Unit 8A · Your work is saved in this browser only</footer>
+
+<script>
+"use strict";
+
+/* ==========================================================
+   DATA
+   ========================================================== */
+
+const CRITERIA = [
+{code:"8A1",week:1,title:"Nutrients and a balanced diet",lesson:"Lesson 1 · Paper Question 1",
+ state:"There are seven things a balanced diet must contain: carbohydrate, protein, lipid, vitamins, minerals, water and dietary fibre. A nutrient is a substance in food that the body needs. A balanced diet contains all seven nutrients, in the right amounts for that person.",
+ describe:"Carbohydrate — the main source of energy. Bread, rice, pasta, potatoes. Protein — growth and repair of cells and tissues. Meat, fish, eggs, beans, lentils. Lipid — an energy store, insulation, and making cell membranes and hormones. Oils, nuts, dairy. Vitamins — needed in small amounts for reactions in the body. Vitamin A for vision, vitamin C for holding tissues together, vitamin D for getting calcium into bone. Minerals — needed in small amounts. Calcium for strong bones and teeth. Iron for making haemoglobin in red blood cells. Water — every reaction in the body happens in water, and blood needs it to transport substances. Dietary fibre — not broken down. It adds bulk so the muscles of the gut have something to push against.",
+ explain:"I can explain why water and fibre are still needed even though neither is broken down for energy. I can explain why a diet can be unbalanced in more than one way at the same time — short of one nutrient and holding too much of another.",
+ evaluate:"I can look at a meal or a menu, decide whether it is balanced, and justify my answer by naming the nutrient that is missing or in excess and saying what the body uses it for.",
+ vocab:["nutrient","balanced diet","carbohydrate","protein","lipid","vitamin","mineral","dietary fibre","energy","source"],
+ wording:"Balanced does not mean equal amounts of each. Lipid is the scientific word — use it rather than fat. A nutrient is not a food: bread is a food, starch is a nutrient. Fibre is not broken down — that is not the same as saying it is not used.",
+ igcse:"IGCSE names vitamins A, C and D and the minerals calcium and iron individually, with their sources, functions and deficiency effects. Learning them by name now means there is nothing new to learn later."},
+
+{code:"8A2",week:1,title:"Energy needs, deficiency and judging a diet",lesson:"Lesson 2, the dietician task · Paper Question 2",
+ state:"Energy in food is measured in kilojoules (kJ). A deficiency is a shortage of a nutrient in the diet. Different people need different amounts of energy and of each nutrient.",
+ describe:"A person needs more energy if they are larger, more active, growing, or pregnant. They need less if they are smaller or less active. Deficiency diseases: vitamin A → night blindness (difficulty seeing in low light). Vitamin C → scurvy (bleeding gums, weakness, slow healing). Vitamin D → rickets (soft, bowed bones). Protein → kwashiorkor (swollen abdomen, weakness). Iron → anaemia (tiredness, weakness, shortness of breath).",
+ explain:"I can explain why the symptom happens, using what the nutrient is for. Vitamin C is needed to make collagen, which holds tissues together, so without it tissues weaken and bleed. Iron is needed to make haemoglobin, which carries oxygen, so without it less oxygen reaches the cells, less energy is released in respiration, and the person feels tired. I can explain that if the energy taken in over a long period does not match the energy the body uses, the body either stores the surplus or uses up its stores.",
+ evaluate:"I can be given a person — their age, how active they are, anything else about them — and judge whether a diet plan meets their needs. I write it like this: “This diet gives them enough … because … . It does not give them enough … , which they need for … . I would add … because … .”",
+ vocab:["kilojoule","energy requirement","deficiency","anaemia","scurvy","rickets","kwashiorkor","night blindness","justify","evaluate"],
+ wording:"A deficiency is the shortage; the disease is what the shortage causes. Naming the disease is not the same as explaining it — the explanation comes from what the nutrient does. Everyday “calories” are kilocalories; in science we use kilojoules.",
+ igcse:"IGCSE asks how energy requirements change with age, activity level and pregnancy, and expects the same justification structure using the function of the nutrient."},
+
+{code:"8A3",week:1,title:"Food tests",lesson:"Lesson 3, practical · Paper Question 3",
+ state:"Iodine tests for starch. Benedict’s tests for reducing sugar. The emulsion test tests for lipid. Biuret tests for protein.",
+ describe:"Iodine: add iodine solution to the sample. Orange-brown → blue-black. Benedict’s: add Benedict’s solution and heat in a hot water bath. Blue → green → yellow → orange → brick red. The further along, the more sugar is present. Emulsion: add ethanol, shake, then add distilled water. Colourless → cloudy white. Biuret: add Biuret solution. Blue → lilac.",
+ explain:"I can explain what a set of results tells me about a food, and explain why a negative result is a result rather than a failure. I can explain why a control is used — so I know the colour change came from the food and not from the reagent.",
+ evaluate:"I can evaluate the method and suggest one specific improvement, saying exactly what that improvement would fix.",
+ vocab:["reagent","iodine solution","Benedict’s solution","Biuret solution","emulsion","positive result","negative result","control","colour change"],
+ wording:"“It went positive” is not an answer. Name the colour change, from … to … . The reagent is what you add; it is not the substance being tested. Do not mix up the tests: it is Benedict’s for sugar and Biuret for protein, and only one of them needs heating.",
+ igcse:"The same four tests are an IGCSE practical, examined both on how you carry them out and on what you conclude from the results. There is no simpler version worth learning first."},
+
+{code:"WS6",week:1,title:"Repeatability and accuracy",lesson:"Lesson 3, alongside the food tests · Paper Question 3",
+ state:"A result is repeatable if you get the same result when you do it again. A measurement is accurate if it is close to the true value. They are not the same thing.",
+ describe:"I can describe what has to be kept the same for a food test to be fair: the same volume of food sample, the same volume of reagent, the same time in the water bath, and the same person deciding the colour. I can record my results in a table with a heading for every column.",
+ explain:"I can explain why judging a colour by eye is a source of error, and why two students can get different answers from the same food. I can explain why repeating a test and comparing with others makes me more confident in the result.",
+ evaluate:"I can suggest one improvement and say what it fixes — for example, using a colour chart so everyone judges against the same standard, which removes differences between people rather than just “being more careful”.",
+ vocab:["repeatable","accurate","true value","control variable","error","improvement"],
+ wording:"“Be more careful” and “do it again” are not improvements. Say what you would change and what problem it solves. Repeatable is about getting the same answer twice; accurate is about being close to the right answer.",
+ igcse:"IGCSE uses precision, accuracy and repeatability as separate ideas throughout the practical papers, and expects improvements to be specific."},
+
+{code:"8A4",week:2,title:"The digestive system",lesson:"Lesson 4 · Paper Questions 4 and 6",
+ state:"Digestion is the breaking down of large, insoluble food molecules into small, soluble ones. Food passes through: mouth → oesophagus → stomach → small intestine → large intestine → rectum → anus. Food does not pass through the salivary glands, liver, gall bladder or pancreas, but all four are part of the system.",
+ describe:"Mouth — teeth break the food up. Saliva from the salivary glands contains amylase, which starts to digest starch. Oesophagus — a tube carrying food from the mouth to the stomach. Stomach — contains hydrochloric acid, which kills bacteria and gives the right conditions for protease (pepsin) to start digesting protein. Small intestine — digestion is completed here, and the small soluble molecules are absorbed into the blood. Large intestine — absorbs water from what is left. Rectum — stores faeces. Anus — where faeces leave the body. This is egestion. Liver — makes bile. Gall bladder — stores bile. Pancreas — makes enzymes and releases them into the small intestine. Peristalsis — waves of muscle contraction in the wall of the gut that squeeze food along.",
+ explain:"I can explain why food has to be broken into small soluble molecules: only molecules that small can pass through the wall of the small intestine and into the blood. I can explain why the gut needs peristalsis rather than relying on gravity — food is pushed along whatever position the body is in.",
+ evaluate:"I can pick one organ and evaluate what it contributes to digestion and to absorption, including what it does not do. Sentence stems: “The organ I have chosen is … . It is important for digestion because … . It is important for absorption because … . It does less for … because … .”",
+ vocab:["oesophagus","stomach","small intestine","large intestine","rectum","anus","salivary gland","liver","gall bladder","pancreas","digestion","peristalsis","soluble","insoluble","ingestion","egestion"],
+ wording:"The stomach is one organ, not the whole gut. The small intestine is long but narrow — “small” describes its width, not its length. Egestion is undigested food leaving the body; excretion is getting rid of waste the body itself has made. They are different words and IGCSE marks them differently. Spell it oesophagus.",
+ igcse:"IGCSE uses the same organs and adds what bile does: it neutralises stomach acid, and it emulsifies lipids into small droplets so lipase has a larger surface area to work on."},
+
+{code:"8A5",week:2,title:"Enzymes and chemical digestion",lesson:"Lesson 5 · Paper Questions 5 and 6",
+ state:"An enzyme is a biological catalyst — it speeds up a reaction without being used up. Physical digestion breaks food into smaller pieces. Chemical digestion breaks the molecules themselves apart, using enzymes. The three enzyme groups are amylase (a carbohydrase), protease and lipase.",
+ describe:"Amylase breaks down starch into maltose. Made in the salivary glands and the pancreas. Protease breaks down protein into amino acids. Made in the stomach (as pepsin) and the pancreas. Lipase breaks down lipid into fatty acids and glycerol. Made in the pancreas. Bile is not an enzyme. It emulsifies lipid into small droplets, which increases the surface area for lipase to work on.",
+ explain:"I can explain why enzymes are needed: without them, digestion would be far too slow to supply the body with what it needs. I can explain the link between digestion and absorption — large insoluble molecules cannot pass through the gut wall, and the enzymes are what turn them into small soluble ones that can.",
+ evaluate:"I can evaluate why the body needs three different enzymes rather than one that does everything: each enzyme only works on one type of molecule.",
+ vocab:["enzyme","catalyst","substrate","product","amylase","carbohydrase","protease","lipase","starch","maltose","amino acid","fatty acid","glycerol","physical digestion","chemical digestion","bile","emulsify"],
+ wording:"Protein and protease are one letter apart. Say “protease breaks down protein” as one fixed phrase until it sticks. An enzyme is not a hormone. “The food is broken down” is not an answer unless you name what it is broken down into. Amylase breaks starch into maltose, not straight into glucose.",
+ igcse:"IGCSE adds the active site, why each enzyme only fits one substrate, and what temperature and pH do to an enzyme. This is also the first topic of Year 9, so what you learn here is the foundation for it."},
+
+{code:"8A6",week:2,title:"Absorption and adaptation",lesson:"Lesson 6 · Paper Question 6, the extended response",
+ state:"Absorption is the movement of small soluble molecules out of the small intestine and into the blood. It happens by diffusion. Villi (one of them is a villus) are finger-like folds in the lining of the small intestine.",
+ describe:"The small intestine has three adaptations. A large surface area, because the villi fold the lining into thousands of projections. A thin wall, only one cell thick. A good blood supply, because every villus contains a network of capillaries. The large intestine absorbs water from what is left; the rest is egested.",
+ explain:"Each adaptation needs its consequence. Large surface area → more molecules can be absorbed at the same time → absorption is faster. Thin wall → the molecules have a shorter distance to diffuse → absorption is faster. Good blood supply → absorbed molecules are carried away, so the concentration in the blood stays low → the concentration gradient is maintained → diffusion keeps going.",
+ evaluate:"I can judge how well the small intestine is adapted for absorption and write it as a full explanation rather than a list. Model structure: “The small intestine is well adapted because it has … . This means … . As a result, absorption is … .” Three features, each with its consequence, is a complete answer.",
+ vocab:["absorption","villus","villi","surface area","diffusion","concentration gradient","capillary","adaptation","egestion"],
+ wording:"Villus is one, villi is more than one — “a villi” is always wrong. Absorption is not digestion. “It has a big surface area” on its own scores nothing; the mark is for what the big surface area does.",
+ igcse:"The identical three-part answer is used for the alveoli in the lungs in the next unit, and again at IGCSE. Two different organs, one way of answering. Learn the structure here and you have it for both."}
+];
+
+const GLOSSARY = [
+["nutrient","a substance in food that the body needs"],
+["balanced diet","contains all seven nutrients, in the right amounts for that person"],
+["carbohydrate","the main source of energy. Bread, rice, pasta"],
+["energy","what respiration releases from glucose, for movement and warmth"],
+["protein","for growth and repair of cells and tissues"],
+["growth and repair","what protein is used for. Not energy"],
+["lipid","the scientific word for fat. Energy store, insulation, membranes"],
+["insulation","keeping heat in. One of the jobs of lipid"],
+["vitamin","needed in small amounts for reactions in the body"],
+["deficiency","a shortage of a nutrient in the diet"],
+["mineral","needed in small amounts. Calcium, iron"],
+["anaemia","caused by too little iron. Tired, weak, short of breath"],
+["dietary fibre","not broken down. Adds bulk so the gut can push food along"],
+["scurvy","caused by too little vitamin C. Bleeding gums, slow healing"],
+["water","every reaction in the body happens in water"],
+["rickets","caused by too little vitamin D. Soft, bowed bones"],
+["haemoglobin","the substance in red blood cells that carries oxygen"],
+["kilojoule","the unit energy in food is measured in. kJ"],
+["kwashiorkor","caused by too little protein. Swollen abdomen, weakness"],
+["night blindness","caused by too little vitamin A. Difficulty seeing in low light"],
+["reagent","the chemical you add to test for something"],
+["iodine solution","tests for starch. Orange-brown → blue-black"],
+["Benedict’s solution","tests for reducing sugar. Blue → brick red, heated"],
+["Biuret solution","tests for protein. Blue → lilac"],
+["emulsion test","tests for lipid. Ethanol then water. Colourless → cloudy"],
+["positive result","the colour change happened, so the nutrient is there"],
+["control","a test with no food in it, so you know the reagent works"],
+["repeatable","you get the same result when you do it again"],
+["accurate","close to the true value. Not the same as repeatable"],
+["improvement","what you would change, AND what that would fix"],
+["digestion","large insoluble molecules broken down into small soluble ones"],
+["oesophagus","the tube from the mouth to the stomach"],
+["peristalsis","waves of muscle contraction that squeeze food along the gut"],
+["soluble","able to dissolve. Only soluble molecules can be absorbed"],
+["insoluble","not able to dissolve. Too big to pass through the gut wall"],
+["enzyme","a biological catalyst — speeds up a reaction, not used up"],
+["amylase","breaks starch down into maltose"],
+["protease","breaks protein down into amino acids"],
+["lipase","breaks lipid down into fatty acids and glycerol"],
+["bile","not an enzyme. Emulsifies lipid into droplets for lipase"],
+["absorption","small soluble molecules moving into the blood"],
+["villus / villi","finger-like folds in the small intestine. One villus, many villi"],
+["egestion","undigested food leaving the body"],
+["excretion","getting rid of waste the body itself has made"],
+["diffusion","particles spreading from where there are many to where there are few"],
+["concentration gradient","the difference in concentration that makes diffusion happen"]
+];
+
+const MISCONCEPTIONS = [
+["A balanced diet means equal amounts of everything.","It means all seven nutrients in the right amounts FOR THAT PERSON. An athlete’s balanced diet is not the same as yours."],
+["“Stomach” means the whole gut.","The stomach is one organ. Name the organ you actually mean."],
+["The small intestine is short.","It is about seven metres long. ‘Small’ describes how narrow it is, not how long."],
+["Digestion and absorption are the same thing.","Digestion is breaking molecules up. Absorption is moving them into the blood. They are the two halves of this unit."],
+["Egestion and excretion are the same.","Egestion is undigested food leaving. Excretion is getting rid of waste the body made. IGCSE marks them differently."],
+["Protein and protease are interchangeable.","Protease breaks down protein. Say the whole phrase until it sticks."],
+["Enzymes are alive, or get used up.","An enzyme is a catalyst. It speeds up a reaction and is not used up — it goes on to do it again."],
+["Amylase breaks starch into glucose.","Into MALTOSE. Glucose comes later. This is worth one mark on the paper."],
+["Fat is the scientific word.","Lipid is. Use it."],
+["“It has a big surface area” is an explanation.","It is half of one. The mark is for what the big surface area DOES — more molecules absorbed at the same time."],
+["“A villi”.","One villus. Many villi. ‘A villi’ is always wrong."],
+["“It went positive” describes a food test result.","Name the colour change: from orange-brown to blue-black."],
+["“Be more careful” is an improvement.","It is not. An improvement says what you would change and what that would fix."]
+];
+
+const STEMS = [
+"The body uses … for …",
+"Without enough … , the body cannot … , so …",
+"The test for … is … . A positive result changes from … to …",
+"… breaks down … into …",
+"The small intestine is well adapted because it has … . This means … . As a result, absorption is …",
+"One improvement would be to … . This would fix … , because at the moment …"
+];
+
+const STRETCH = [
+"Fibre is never broken down and water gives no energy. So why does the body need either?",
+"Why does the body need three different enzymes instead of one that does everything?",
+"A person has part of their small intestine removed. Which adaptation do they lose, and what happens?",
+"Bile is not an enzyme, but without it lipase works far more slowly. Why?",
+"Two people eat exactly the same meal. Why might it be balanced for one and not the other?",
+"Biological washing powder works at 30 °C. What is in it, and why does that save energy?"
+];
+
+const COMMAND_WORDS = [
+["State / Name","Give the answer. No explanation needed, no marks for one."],
+["Describe","Say what happens. Still no because."],
+["Explain","Say what happens AND why. An explanation without a because is not an explanation."],
+["Calculate","Show the working. A correct answer with no working can still lose marks."],
+["Identify","Pick it out of the information you have been given."],
+["Suggest","Apply what you know to something you have not been taught. More than one answer may be right."],
+["Compare","Both things, in the same sentence, using words like whereas and higher than."],
+["Evaluate","Give both sides, then a judgement. A judgement on its own scores nothing."]
+];
+
+const QUIZZES = [
+{week:1,title:"Nutrients, diet and deficiency",note:"Lessons 1 and 2",qs:[
+ {q:"Which list gives all seven components of a balanced diet?",o:["Carbohydrate, protein, lipid, vitamins, minerals, water, dietary fibre","Carbohydrate, protein, fat, sugar, water, salt, fibre","Protein, vitamins, minerals, water, sugar, starch, fibre","Carbohydrate, protein, lipid, vitamins, minerals, sugar, salt"],a:0,c:"8A1",p:"Q1a"},
+ {q:"What does the body use protein for?",o:["The main source of energy","Growth and repair of cells and tissues","Insulation and storing energy","Adding bulk so the gut has something to push against"],a:1,c:"8A1",p:"Q1a"},
+ {q:"Dietary fibre is not broken down by the body. Why is it still needed?",o:["It provides energy slowly over a long time","It gives the muscles of the gut something to push against","It is used to build new cells","It carries vitamins into the blood"],a:1,c:"8A1",p:"Q1a"},
+ {q:"Which mineral is needed to make haemoglobin in red blood cells?",o:["Calcium","Iron","Vitamin C","Vitamin D"],a:1,c:"8A1",p:"Q2c"},
+ {q:"What is meant by a deficiency?",o:["Eating too much of one nutrient","A shortage of a nutrient in the diet","A disease caused by bacteria in food","Being unable to digest a nutrient"],a:1,c:"8A2",p:"Q2a"},
+ {q:"A lack of vitamin C causes which deficiency disease?",o:["Rickets","Anaemia","Scurvy","Night blindness"],a:2,c:"8A2",p:"Q2b"},
+ {q:"Why does a person who is short of iron often feel tired?",o:["Iron is the body’s main source of energy","Less haemoglobin is made, so less oxygen reaches the cells","Iron helps the gut absorb food more quickly","Iron is needed to build muscle tissue"],a:1,c:"8A2",p:"Q2c"},
+ {q:"Two people of the same age eat exactly the same meal. Why might it be balanced for one of them and not the other?",o:["People digest food at different speeds","They need different amounts because of their size and how active they are","A meal is either balanced or it is not","One of them ate it more slowly"],a:1,c:"8A2",p:"Q1b"},
+ {q:"A group of similar cells working together is called:",o:["An organ","A tissue","An organ system","An organism"],a:1,c:"7A",p:"—"},
+ {q:"Which command word asks you to make a judgement and give reasons for it?",o:["State","Describe","Evaluate","Name"],a:2,c:"CW",p:"—"}
+]},
+{week:2,title:"Food tests, repeatability and the digestive system",note:"Lessons 3 and 4 — the heaviest week, three criteria are new",qs:[
+ {q:"Which reagent is used to test a food for starch?",o:["Benedict’s solution","Iodine solution","Biuret solution","Ethanol"],a:1,c:"8A3",p:"Q3a"},
+ {q:"What is the colour change when iodine solution is added to a food containing starch?",o:["Blue to lilac","Orange-brown to blue-black","Blue to brick red","Colourless to cloudy white"],a:1,c:"8A3",p:"Q3a"},
+ {q:"A food is tested with Biuret solution and turns lilac. Which nutrient is present?",o:["Starch","Reducing sugar","Protein","Lipid"],a:2,c:"8A3",p:"Q3b"},
+ {q:"A result is described as repeatable. What does this mean?",o:["It is close to the true value","You get the same result when you do the test again","It agrees with the textbook","It was measured with the best available equipment"],a:1,c:"WS6",p:"Q3c"},
+ {q:"Which of these is a real improvement to a food test method, rather than just advice?",o:["Be more careful when looking at the colours","Do the whole test again","Use a printed colour chart so everyone judges against the same standard","Concentrate harder while you are working"],a:2,c:"WS6",p:"Q3e"},
+ {q:"Which organ of the digestive system produces hydrochloric acid?",o:["Oesophagus","Stomach","Small intestine","Liver"],a:1,c:"8A4",p:"Q6"},
+ {q:"What is peristalsis?",o:["The breaking down of large molecules into small ones","Waves of muscle contraction that squeeze food along the gut","The absorption of water in the large intestine","Food falling through the gut under gravity"],a:1,c:"8A4",p:"Q4b"},
+ {q:"Which nutrient is the body’s main source of energy?",o:["Protein","Carbohydrate","Vitamin C","Water"],a:1,c:"8A1",p:"Q1a"},
+ {q:"A lack of vitamin D causes which deficiency disease?",o:["Scurvy","Anaemia","Kwashiorkor","Rickets"],a:3,c:"8A2",p:"Q2b"},
+ {q:"A class tests several foods for protein. Which of these must be kept the same for the comparison to be fair?",o:["The type of food being tested","The volume of Biuret solution added to each sample","Whether the food is a solid or a liquid","The colour that each food turns"],a:1,c:"WS6",p:"Q3d"}
+]},
+{week:3,title:"Enzymes and absorption",note:"Lessons 5 and 6 — seven of these prepare directly for the extended response",qs:[
+ {q:"An enzyme is best described as:",o:["A living thing that breaks down food","A biological catalyst that speeds up a reaction without being used up","A nutrient found in protein-rich foods","A hormone made by the pancreas"],a:1,c:"8A5",p:"Q6"},
+ {q:"Which enzyme breaks down protein, and what does it produce?",o:["Amylase; glucose","Lipase; fatty acids and glycerol","Protease; amino acids","Carbohydrase; maltose"],a:2,c:"8A5",p:"Q5a"},
+ {q:"Amylase breaks starch down into:",o:["Glucose","Maltose","Amino acids","Glycerol"],a:1,c:"8A5",p:"Q6"},
+ {q:"What is the difference between physical and chemical digestion?",o:["Physical uses enzymes; chemical uses the teeth","Physical breaks food into smaller pieces; chemical breaks the molecules themselves apart","Physical happens in the stomach; chemical happens in the mouth","There is no real difference between them"],a:1,c:"8A5",p:"Q6"},
+ {q:"What is absorption?",o:["Breaking large molecules into small ones","The movement of small soluble molecules out of the small intestine and into the blood","The removal of undigested food from the body","The squeezing of food along the gut"],a:1,c:"8A6",p:"Q6"},
+ {q:"Which of these is a complete explanation of how villi help absorption?",o:["They give the small intestine a large surface area","They give a large surface area, so more molecules can be absorbed at the same time","They produce the enzymes that digest the food","They store nutrients in the gut wall until the body needs them"],a:1,c:"8A6",p:"Q6"},
+ {q:"Why does a good blood supply help absorption?",o:["It keeps the small intestine warm","It carries absorbed molecules away, so the concentration gradient is maintained","It supplies enzymes to the surface of the villi","It makes the wall of the small intestine thinner"],a:1,c:"8A6",p:"Q6"},
+ {q:"Digestion is best described as:",o:["Food being pushed along the gut by muscles","Large insoluble molecules being broken down into small soluble ones","Nutrients passing through the gut wall into the blood","Undigested food leaving the body"],a:1,c:"8A4",p:"Q6"},
+ {q:"Diffusion is:",o:["Particles being pushed from one place to another","Particles spreading out from where there are many of them to where there are few","Particles joining together to make larger ones","Particles moving only when a liquid is stirred"],a:1,c:"7G4",p:"Q6"},
+ {q:"A student timed how long amylase took to break down starch at five temperatures and recorded 245 s, 168 s, 190 s, 82 s and 51 s as the temperature increased. Which result is anomalous?",o:["245 s","168 s","190 s","51 s"],a:2,c:"WS6",p:"Q5c"}
+]}
+];
+
+/* Mark points: a point is scored if EVERY group in `need` has at least one
+   of its strings present in the normalised answer. */
+const EXAM = [
+{n:"1",parts:[
+  {id:"1a",marks:3,c:"8A1",ao:"AO1",
+   stem:"Complete the table to give one use in the body for each nutrient.",
+   fields:[
+    {label:"Lipid",need:[["energy","insulation","insulat","membrane","warm","store","hormone"]],model:"An energy store, insulation, and making cell membranes and hormones."},
+    {label:"Water",need:[["reaction","transport","dissolv","carr","blood","hydrat"]],model:"Every reaction in the body happens in water, and blood needs water to transport substances."},
+    {label:"Vitamins",need:[["small amount","reaction","vision","tissue","bone","calcium","healthy","body needs"]],model:"Needed in small amounts for reactions in the body."}
+   ]},
+  {id:"1b",marks:1,c:"8A2",ao:"AO2",
+   stem:"A 14-year-old who is still growing needs more protein each day than an adult of the same mass. Suggest why.",
+   mps:[{t:"They are growing, so they need protein to build new cells and tissues",need:[["grow","repair","new cell","new tissue","build","develop"]]}],
+   model:"They are still growing, so they need more protein to build new cells and tissues."}
+]},
+{n:"2",parts:[
+  {id:"2a",marks:1,c:"8A2",ao:"AO1",
+   stem:"State the unit used to measure the energy in food.",
+   mps:[{t:"Kilojoules (kJ)",need:[["kilojoule","kj"]]}],
+   model:"Kilojoules (kJ)."},
+  {id:"2b",marks:1,c:"8A2",ao:"AO1",
+   stem:"Name the deficiency disease caused by a lack of vitamin C.",
+   mps:[{t:"Scurvy",need:[["scurvy","scurvey","scurvi"]]}],
+   model:"Scurvy."},
+  {id:"2c",marks:3,c:"8A2",ao:"AO2",
+   stem:"A doctor finds that a patient does not have enough vitamin C in their diet. The patient's gums bleed and small cuts take a long time to heal. Explain why a lack of vitamin C causes these symptoms.",
+   mps:[
+    {t:"Vitamin C is needed to make collagen",need:[["collagen","colagen"]]},
+    {t:"Collagen holds tissues together / gives them their structure",need:[["tissue","together","hold","structur","support","skin","gum","strong"]]},
+    {t:"So without it the tissues weaken — the gums bleed and wounds heal slowly",need:[["weak","bleed","break","heal","damage","fall apart","tear","repair"]]}
+   ],
+   model:"Vitamin C is needed to make collagen. Collagen holds tissues together and gives them their strength, so without enough vitamin C the tissues weaken. That is why the gums bleed and why cuts are slow to heal."}
+]},
+{n:"3",intro:"A class tested three foods for nutrients. Their results are shown in the table.",
+ table:{head:["Food","Iodine test","Benedict\u2019s test","Emulsion test","Biuret test"],
+        rows:[["P","blue-black","blue","cloudy white","blue"],["Q","orange-brown","brick red","colourless","blue"],["R","blue-black","blue","colourless","lilac"]]},
+ parts:[
+  {id:"3a",marks:1,c:"8A3",ao:"AO1",
+   stem:"State the colour change seen when Biuret solution is added to a food containing protein.",
+   mps:[{t:"Blue to lilac",need:[["blue"],["lilac","purple","violet","mauve"]]}],
+   model:"Blue to lilac."},
+  {id:"3b",marks:1,c:"8A3",ao:"AO2",
+   stem:"Use the table to identify the food that contains lipid but does not contain protein.",
+   mps:[{t:"Food P",need:[["=p","food p"]]}],
+   exactOk:["p","food p"],
+   model:"Food P. The emulsion test turned cloudy white, so lipid is present, and the Biuret test stayed blue, so there is no protein."},
+  {id:"3c",marks:1,c:"WS6",ao:"AO3",
+   stem:"Two groups tested the same sample of food Q with Benedict\u2019s solution. One group recorded \u201Cyellow\u201D and the other recorded \u201Cbrick red\u201D. Suggest one reason for the difference.",
+   mps:[{t:"A sensible source of difference \u2014 the colour was judged by eye, or the samples were heated for different times",need:[["eye","judge","opinion","subjectiv","different people","shade","chart","decid","interpret","longer","time","heat","water bath","amount","volume","perceiv"]]}],
+   model:"They judged the colour by eye, and two people can decide differently about the same shade because there is no colour chart to compare against. (Also acceptable: one group heated the sample for longer, so the colour developed further.)"},
+  {id:"3d",marks:1,c:"WS6",ao:"AO1",
+   stem:"The class wanted to compare how much sugar three different drinks contain. State one variable that must be kept the same for the comparison to be fair.",
+   mps:[{t:"A named control variable \u2014 e.g. volume of drink, volume of Benedict\u2019s, time in the water bath, or water bath temperature",need:[["volume","amount","mass","quantity","time","temperature","same person","concentration","how much","size"]]}],
+   model:"The volume of Benedict\u2019s solution added to each drink. (Also acceptable: the volume of drink tested, the time in the water bath, the water bath temperature, or the same person judging the colour.)"},
+  {id:"3e",marks:2,c:"WS6",ao:"AO3",
+   stem:"Suggest one improvement to the method that would make the results more repeatable. State what your improvement would fix.",
+   mps:[
+    {t:"A specific improvement is named",need:[["colour chart","color chart","chart","colorimeter","colourimeter","same person","photograph","camera","standard","measuring cylinder","syringe","timer","stopwatch","same time","water bath","light box","balance"]]},
+    {t:"What it fixes is stated",need:[["same standard","everyone judges","judge the same","removes","difference between people","subjectiv","opinion","no longer depends","consistent","compare against","so everyone","fair","reliab","repeat","same each time","equally","same time","same length","equal","every sample","each sample","all the samples","the same for"]]}
+   ],
+   model:"Use a stopwatch so that every sample is heated for exactly the same time. This fixes the fact that groups were leaving samples in the water bath for different lengths of time, which let the colour develop further in some tubes than others. (A printed colour chart, so everyone judges the shade against the same standard, also scores both marks.)"}
+]},
+{n:"4",parts:[
+  {id:"4a",marks:1,c:"8A4",ao:"AO1",
+   stem:"Name the organ of the digestive system that produces hydrochloric acid.",
+   mps:[{t:"Stomach",need:[["stomach"]]}],
+   model:"The stomach."},
+  {id:"4b",marks:1,c:"8A4",ao:"AO2",
+   stem:"A patient has to eat a meal while lying flat on their back. Explain why the food still reaches their stomach.",
+   mps:[{t:"Peristalsis \u2014 waves of muscle contraction squeeze the food along",need:[["peristalsis","peristalsys","muscle","contract","squeez","wave","push"]]}],
+   model:"Peristalsis. Waves of muscle contraction in the wall of the oesophagus squeeze the food along, so it is pushed to the stomach whatever position the body is in and gravity is not needed."},
+  {id:"4c",marks:1,c:"8A6",ao:"AO1",
+   stem:"Name the process by which small soluble molecules pass through the wall of the small intestine and into the blood.",
+   mps:[{t:"Diffusion",need:[["diffus","absorption","absorb"]]}],
+   model:"Diffusion. (The whole process is called absorption.)"}
+]},
+{n:"5",parts:[
+  {id:"5a",marks:1,c:"8A5",ao:"AO1",
+   stem:"Complete the sentence. Amylase breaks down \u2026\u2026\u2026\u2026 into \u2026\u2026\u2026\u2026 .",
+   fields:[
+    {label:"breaks down",need:[["starch"]],model:"starch"},
+    {label:"into",need:[["maltose"]],model:"maltose (not glucose)"}
+   ],
+   marksOverride:1},
+  {id:"5b",marks:1,c:"WS6",ao:"AO1",
+   stem:"A student investigated how the temperature of the mixture affects how long lipase takes to break down all the lipid in a sample. State the independent variable in this investigation.",
+   table:{head:["Temperature (\u00B0C)","15","25","35","45","55"],rows:[["Time taken (s)","300","214","240","96","60"]]},
+   mps:[{t:"Temperature",need:[["temperature","temp"]]}],
+   model:"Temperature."},
+  {id:"5c",marks:1,c:"WS6",ao:"AO2",
+   stem:"One of the results is anomalous. Identify it.",
+   mps:[{t:"240 s (the result at 35 \u00B0C)",need:[["240"]]}],
+   model:"240 s, the result at 35 \u00B0C."},
+  {id:"5d",marks:1,c:"WS6",ao:"AO2",
+   stem:"Ignoring the anomalous result, describe the pattern shown by the results.",
+   mps:[{t:"As temperature increases, the time taken decreases",need:[["temperature","temp","hotter","warmer"],["decreas","less","lower","shorter","faster","quicker","goes down","go down","reduc","drops","smaller"]]}],
+   model:"As the temperature increases, the time taken to break down the lipid decreases."}
+]},
+{n:"6",intro:"A person eats a meal of pasta and cheese. Pasta contains a lot of starch. Cheese contains a lot of lipid.",
+ parts:[
+  {id:"6",marks:6,c:"8A6",ao:"AO3",aoSplit:{AO2:3,AO3:3},cap:6,
+   stem:"Explain how the starch and the lipid in this meal are digested, and how the products are then absorbed into the blood.",
+   hint:"In your answer you should name the enzymes involved and explain how the small intestine is adapted for absorption.",
+   mps:[
+    {t:"Amylase is named as the enzyme that digests starch",need:[["amylase"]]},
+    {t:"Starch is broken down into maltose",need:[["maltose"]]},
+    {t:"Lipase is named as the enzyme that digests lipid",need:[["lipase"]]},
+    {t:"Lipid is broken down into fatty acids and glycerol",need:[["fatty acid","glycerol"]]},
+    {t:"Bile emulsifies the lipid into droplets, increasing the surface area for lipase",need:[["bile","emulsif","droplet"]]},
+    {t:"The products are small and soluble, so they can pass through the wall by diffusion",need:[["soluble","diffus","pass through","small enough","small molecules"]]},
+    {t:"Large surface area (villi) \u2014 so more molecules are absorbed at the same time",need:[["surface area"]]},
+    {t:"Thin wall, one cell thick \u2014 a shorter distance to diffuse",need:[["=thin","thinner","thin wall","one cell"]]},
+    {t:"Good blood supply / capillaries \u2014 keeps the concentration gradient",need:[["blood supply","capillar","concentration gradient","carried away","blood vessel","taken away"]]}
+   ],
+   model:"Starch is digested by amylase, made in the salivary glands and the pancreas, which breaks it down into maltose. Lipid is digested by lipase, made in the pancreas, which breaks it down into fatty acids and glycerol. Bile, made in the liver, is not an enzyme but it emulsifies the lipid into small droplets, which increases the surface area for lipase to work on. The products are small and soluble, so they can pass through the wall of the small intestine and into the blood by diffusion. The small intestine is adapted for this in three ways. It has a large surface area because the villi fold the lining into thousands of projections, so more molecules can be absorbed at the same time. Its wall is only one cell thick, so the molecules have a shorter distance to diffuse. It has a good blood supply, because every villus contains capillaries, which carry the absorbed molecules away and keep the concentration gradient, so diffusion continues."}
+]}
+];
+
+const AO_TOTALS = {AO1:11,AO2:11,AO3:6};
+const PAPER_TOTAL = 28;
+
+/* ==========================================================
+   STATE
+   ========================================================== */
+const KEY = "yba-y8-8a-v1";
+let S = {rungs:{},checkins:[],quiz:{},exam:{}};
+
+function load(){
+  try{
+    const raw = localStorage.getItem(KEY);
+    if(raw){ const p = JSON.parse(raw); if(p && typeof p === "object") S = Object.assign(S,p); }
+  }catch(e){ /* storage unavailable — carry on without saving */ }
+}
+let saveTimer=null;
+function save(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(()=>{
+    try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){}
+  },250);
+}
+load();
+
+/* ==========================================================
+   HELPERS
+   ========================================================== */
+const $ = (s,r)=> (r||document).querySelector(s);
+function el(tag,cls,html){const n=document.createElement(tag);if(cls)n.className=cls;if(html!=null)n.innerHTML=html;return n;}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+function normalise(s){
+  return " "+String(s||"")
+    .toLowerCase()
+    .replace(/[’']/g,"")
+    .replace(/[^a-z0-9°]+/g," ")
+    .replace(/\s+/g," ")
+    .trim()+" ";
+}
+function hasAny(norm,list){
+  return list.some(w=>{
+    const t=normalise(w).trim();
+    if(!t) return false;
+    if(String(w).charAt(0)==="=") return norm.indexOf(" "+t+" ")!==-1;   // whole word only
+    return norm.indexOf(" "+t)!==-1;                                      // word-start, allows endings
+  });
+}
+function scoreMP(norm,mp){ return (mp.need||[]).every(group=>hasAny(norm,group)); }
+
+function criterionByCode(c){ return CRITERIA.find(x=>x.code===c); }
+function today(){ const d=new Date(); return d.toLocaleDateString("en-GB",{day:"2-digit",month:"short"}); }
+
+/* ==========================================================
+   TABS
+   ========================================================== */
+const TABS=[["ko","Knowledge organiser"],["vocab","Vocabulary"],["quiz","Weekly quizzes"],["exam","Exam practice"],["progress","My progress"]];
+function buildTabs(){
+  const wrap=$("#tabs");
+  TABS.forEach(([id,label],i)=>{
+    const b=el("button",null,label);
+    b.setAttribute("role","tab");
+    b.setAttribute("aria-selected", i===0?"true":"false");
+    b.onclick=()=>showTab(id);
+    b.dataset.tab=id;
+    wrap.appendChild(b);
+  });
+}
+function showTab(id){
+  TABS.forEach(([t])=>{ $("#p-"+t).hidden = (t!==id); });
+  document.querySelectorAll("#tabs button").forEach(b=>b.setAttribute("aria-selected", b.dataset.tab===id?"true":"false"));
+  if(id==="progress") renderProgress();
+  window.scrollTo({top:0,behavior:"auto"});
+}
+
+/* ==========================================================
+   KNOWLEDGE ORGANISER
+   ========================================================== */
+let koWeek = 1;
+function renderKO(){
+  const p=$("#p-ko"); p.innerHTML="";
+  p.appendChild(el("div","intro","This is the whole unit. Tick a rung when you can do it <strong>without looking</strong> — cover the text, write it out, then check. Every week, give each criterion a red, amber or green in <b>My progress</b> and revise the reds."));
+
+  const bar=el("div","weekbar");
+  [[1,"Week 1 — Nutrition and food tests"],[2,"Week 2 — Digestion, enzymes and absorption"]].forEach(([w,label])=>{
+    const b=el("button",null,label);
+    b.setAttribute("aria-pressed", koWeek===w?"true":"false");
+    b.onclick=()=>{koWeek=w;renderKO();};
+    bar.appendChild(b);
+  });
+  p.appendChild(bar);
+
+  CRITERIA.filter(c=>c.week===koWeek).forEach(c=>p.appendChild(koCard(c)));
+}
+
+function koCard(c){
+  const card=el("div","card");
+  const head=el("div","card-head");
+  head.appendChild(el("div","code",esc(c.code)+" "+esc(c.title)+"<small>"+esc(c.lesson)+"</small>"));
+  head.appendChild(ragWidget(c.code));
+  card.appendChild(head);
+
+  const grid=el("div","ladder");
+  const rail=el("div","rail");
+  const col=el("div");
+  [["State it","state"],["Describe it","describe"],["Explain it","explain"],["Evaluate it","evaluate"]].forEach(([label,k])=>{
+    const rung=el("div","rung");
+    const key=c.code+":"+k;
+    const knob=el("button","knob");
+    knob.type="button";
+    knob.setAttribute("aria-pressed", S.rungs[key]?"true":"false");
+    knob.setAttribute("aria-label","Tick "+label+" for "+c.code);
+    knob.onclick=()=>{ S.rungs[key]=!S.rungs[key]; knob.setAttribute("aria-pressed",S.rungs[key]?"true":"false"); save(); };
+    rung.appendChild(knob);
+    rung.appendChild(el("h4",null,label));
+    rung.appendChild(el("div","body",esc(c[k])));
+    col.appendChild(rung);
+  });
+  grid.appendChild(rail); grid.appendChild(col);
+  card.appendChild(grid);
+
+  const v=el("div","meta-row");
+  v.appendChild(el("div","lbl","Vocabulary"));
+  const chips=el("div","vocab-chips");
+  c.vocab.forEach(w=>chips.appendChild(el("span","chip",esc(w))));
+  v.appendChild(chips);
+  card.appendChild(v);
+
+  const w=el("div","meta-row warn");
+  w.appendChild(el("div","lbl","Watch the wording"));
+  w.appendChild(el("div",null,esc(c.wording)));
+  card.appendChild(w);
+
+  const n=el("div","meta-row next");
+  n.appendChild(el("div","lbl","Next step at IGCSE"));
+  n.appendChild(el("div","body",esc(c.igcse)));
+  card.appendChild(n);
+
+  return card;
+}
+
+function latestCheckin(){ return S.checkins.length ? S.checkins[S.checkins.length-1] : null; }
+function ragWidget(code){
+  const wrap=el("div","rag");
+  wrap.appendChild(el("span","lbl","Rate it"));
+  ["R","A","G"].forEach(v=>{
+    const b=el("button",null,v); b.type="button"; b.dataset.v=v;
+    const ci=latestCheckin();
+    b.setAttribute("aria-pressed", ci && ci.ratings[code]===v ? "true":"false");
+    b.setAttribute("aria-label",code+" rated "+v);
+    b.onclick=()=>{
+      let c=latestCheckin();
+      if(!c){ c={date:today(),ratings:{}}; S.checkins.push(c); }
+      c.ratings[code]= c.ratings[code]===v ? null : v;
+      save();
+      wrap.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", c.ratings[code]===x.dataset.v ? "true":"false"));
+    };
+    wrap.appendChild(b);
+  });
+  return wrap;
+}
+
+/* ==========================================================
+   VOCABULARY
+   ========================================================== */
+function renderVocab(){
+  const p=$("#p-vocab"); p.innerHTML="";
+  p.appendChild(el("div","intro","Every word here appears in the lessons, the quizzes and the assessment. The misconceptions below are where most marks are lost — read them more than once."));
+
+  const inp=el("input","search"); inp.type="search"; inp.placeholder="Search a word or a definition…";
+  inp.setAttribute("aria-label","Search the vocabulary");
+  p.appendChild(inp);
+
+  const card=el("div","card");
+  const dl=el("dl","glossary"); dl.style.padding="6px 18px";
+  card.appendChild(dl); p.appendChild(card);
+
+  function draw(filter){
+    dl.innerHTML="";
+    const f=(filter||"").toLowerCase().trim();
+    let n=0;
+    GLOSSARY.forEach(([t,d])=>{
+      if(f && (t+" "+d).toLowerCase().indexOf(f)===-1) return;
+      n++;
+      const box=el("div","term");
+      box.appendChild(el("dt",null,esc(t)));
+      box.appendChild(el("dd",null,esc(d)));
+      dl.appendChild(box);
+    });
+    if(!n) dl.appendChild(el("div","empty","No word matches that. Try part of the word, or clear the search."));
+  }
+  draw("");
+  inp.oninput=()=>draw(inp.value);
+
+  const m=el("div","card");
+  m.appendChild(el("div","card-head",'<div class="code">Words that do not mean what you think<small>Each one has an everyday meaning that fights the scientific one</small></div>'));
+  const g=el("div","misc");
+  MISCONCEPTIONS.forEach(([x,t])=>{
+    g.appendChild(el("div","x","✗&nbsp; "+esc(x)));
+    g.appendChild(el("div","t","✓&nbsp; "+esc(t)));
+  });
+  m.appendChild(g); p.appendChild(m);
+
+  const s=el("div","card");
+  s.appendChild(el("div","card-head",'<div class="code">How to start a good answer</div>'));
+  const sl=el("div","meta-row");
+  STEMS.forEach(x=> sl.appendChild(el("div","body",'<span style="font-family:Georgia,serif">'+esc(x)+"</span>")));
+  s.appendChild(sl); p.appendChild(s);
+
+  const st=el("div","card");
+  st.appendChild(el("div","card-head",'<div class="code">Going further — for everyone<small>These are hard. Have a go anyway — nobody is expected to get them straight away</small></div>'));
+  const stl=el("div","meta-row"); const ul=el("ul"); ul.style.margin="0"; ul.style.paddingLeft="20px";
+  STRETCH.forEach(x=>{const li=el("li",null,esc(x));li.style.marginBottom="7px";li.style.fontFamily="Georgia,serif";ul.appendChild(li);});
+  stl.appendChild(ul); st.appendChild(stl); p.appendChild(st);
+}
+
+/* ==========================================================
+   QUIZZES
+   ========================================================== */
+let quizWeek=1;
+function renderQuiz(){
+  const p=$("#p-quiz"); p.innerHTML="";
+  p.appendChild(el("div","intro","Ten questions a week, one point each. You get the answer straight away — read the feedback even when you are right, because it tells you which question on the paper this one is rehearsing."));
+
+  const bar=el("div","weekbar");
+  QUIZZES.forEach(q=>{
+    const b=el("button",null,"Week "+q.week);
+    b.setAttribute("aria-pressed", quizWeek===q.week?"true":"false");
+    b.onclick=()=>{quizWeek=q.week;renderQuiz();};
+    bar.appendChild(b);
+  });
+  p.appendChild(bar);
+
+  const Q=QUIZZES.find(x=>x.week===quizWeek);
+  const card=el("div","card");
+  card.appendChild(el("div","card-head",'<div class="code">Week '+Q.week+" — "+esc(Q.title)+"<small>"+esc(Q.note)+"</small></div>"));
+
+  Q.qs.forEach((q,i)=>{
+    const key="w"+Q.week+"q"+i;
+    const box=el("div","q");
+    box.appendChild(el("div","stem","<b>"+(i+1)+"</b>"+esc(q.q)));
+    const fb=el("div","fb"); fb.hidden=true;
+    const btns=[];
+    q.o.forEach((o,j)=>{
+      const b=el("button","opt",String.fromCharCode(97+j)+")&nbsp; "+esc(o));
+      b.type="button";
+      b.onclick=()=>answer(j);
+      btns.push(b); box.appendChild(b);
+    });
+    box.appendChild(fb);
+
+    function paint(chosen){
+      btns.forEach((b,j)=>{
+        b.disabled=true;
+        if(j===q.a) b.classList.add("correct");
+        else if(j===chosen) b.classList.add("wrong");
+      });
+      const right = chosen===q.a;
+      const crit = q.c==="CW" ? "Command words" : (q.c==="7A"||q.c==="7G4" ? "Year 7 retrieval ("+q.c+")" : q.c+" "+(criterionByCode(q.c)||{}).title);
+      fb.hidden=false;
+      fb.innerHTML = (right ? "<b>Correct.</b> " : "<b>Not this time.</b> The answer is "+String.fromCharCode(97+q.a)+". ")
+        + esc(crit) + (q.p!=="—" ? " · rehearsing paper question "+esc(q.p) : "");
+    }
+    function answer(j){ S.quiz[key]=j; save(); paint(j); tally(); }
+    if(S.quiz[key]!=null) paint(S.quiz[key]);
+    card.appendChild(box);
+  });
+
+  const sc=el("div","score"); sc.id="quiz-score"; card.appendChild(sc);
+  const row=el("div","btnrow"); row.style.padding="0 18px 16px";
+  const reset=el("button","btn ghost","Clear this week’s answers");
+  reset.onclick=()=>{ Q.qs.forEach((q,i)=>delete S.quiz["w"+Q.week+"q"+i]); save(); renderQuiz(); };
+  row.appendChild(reset); card.appendChild(row);
+  p.appendChild(card);
+
+  function tally(){
+    let done=0,right=0;
+    Q.qs.forEach((q,i)=>{const v=S.quiz["w"+Q.week+"q"+i]; if(v!=null){done++; if(v===q.a) right++;}});
+    sc.innerHTML = done? ("<b>"+right+" out of "+done+"</b> answered so far, "+Q.qs.length+" in the quiz.") : "No answers yet. Work through all ten, then look at which criteria your wrong answers came from.";
+  }
+  tally();
+}
+
+/* ==========================================================
+   EXAM PRACTICE
+   ========================================================== */
+function renderExam(){
+  const p=$("#p-exam"); p.innerHTML="";
+  p.appendChild(el("div","intro","A practice paper built to match Assessment 1 question for question — <strong>28 marks in 35 minutes</strong>, the same criteria and the same marks, but different foods, different data and different patients. These are not the questions you will sit. Write your answer, press Check, and you will be told which mark points the examiner is looking for and which ones you have hit. Then read the model answer and give yourself the mark you honestly think you earned."));
+
+  const cw=el("div","card");
+  cw.appendChild(el("div","card-head",'<div class="code">Do exactly what the command word asks<small>Read the word at the start of every question before you write</small></div>'));
+  const sc=el("div","scroller");
+  let html="<table><thead><tr><th>Word</th><th>What you must actually do</th></tr></thead><tbody>";
+  COMMAND_WORDS.forEach(([w,d])=> html+="<tr><td><b>"+esc(w)+"</b></td><td>"+esc(d)+"</td></tr>");
+  html+="</tbody></table>";
+  sc.innerHTML=html; cw.appendChild(sc); p.appendChild(cw);
+
+  EXAM.forEach(Q=>{
+    const card=el("div","card");
+    let marks=0; Q.parts.forEach(pt=>marks+=pt.marks);
+    card.appendChild(el("div","card-head",'<div class="code">Question '+Q.n+'<small>Total '+marks+' mark'+(marks>1?"s":"")+'</small></div>'));
+    if(Q.intro){ const i=el("div","meta-row"); i.appendChild(el("div","body",'<span style="font-family:Georgia,serif">'+esc(Q.intro)+"</span>")); card.appendChild(i); }
+    if(Q.table) card.appendChild(tableBlock(Q.table));
+    Q.parts.forEach(pt=> card.appendChild(examPart(pt)));
+    p.appendChild(card);
+  });
+
+  const row=el("div","btnrow");
+  const clr=el("button","btn ghost","Clear all my exam answers");
+  clr.onclick=()=>{ if(confirm("Delete every answer and mark you have entered on this paper?")){ S.exam={}; save(); renderExam(); } };
+  row.appendChild(clr); p.appendChild(row);
+}
+
+function tableBlock(t){
+  const w=el("div","scroller"); w.style.padding="0 18px 14px";
+  let h="<table><thead><tr>"+t.head.map(x=>"<th>"+esc(x)+"</th>").join("")+"</tr></thead><tbody>";
+  t.rows.forEach(r=> h+="<tr>"+r.map((c,i)=> i===0?"<td><b>"+esc(c)+"</b></td>":"<td>"+esc(c)+"</td>").join("")+"</tr>");
+  h+="</tbody></table>"; w.innerHTML=h; return w;
+}
+
+function examPart(pt){
+  const box=el("div","q");
+  const st=el("div","qtext");
+  st.innerHTML='<span class="marks">('+pt.marks+")</span><b>"+esc(pt.id)+"</b>&nbsp; "+pt.stem
+    + (pt.hint? '<span class="hint">'+esc(pt.hint)+"</span>":"");
+  box.appendChild(st);
+  if(pt.table) box.appendChild(tableBlock(pt.table));
+
+  const store = S.exam[pt.id] = S.exam[pt.id] || {ans:null,fields:[],mark:null};
+  if(!Array.isArray(store.fields)) store.fields=[];
+  if(typeof store.ans!=="string") store.ans = store.ans||null;
+  const inputs=[];
+
+  if(pt.fields){
+    pt.fields.forEach((f,i)=>{
+      const row=el("div","fieldrow");
+      const id="f-"+pt.id+"-"+i;
+      const lab=el("label",null,esc(f.label)); lab.htmlFor=id;
+      const inp=el("input"); inp.type="text"; inp.id=id; inp.value=store.fields[i]||"";
+      inp.oninput=()=>{ store.fields[i]=inp.value; save(); };
+      row.appendChild(lab); row.appendChild(inp); box.appendChild(row); inputs.push(inp);
+    });
+  } else {
+    const ta=el("textarea");
+    ta.rows = pt.marks>=6?9 : pt.marks>=3?5 : pt.marks===2?3:2;
+    ta.value = store.ans||"";
+    ta.setAttribute("aria-label","Your answer to question "+pt.id);
+    ta.oninput=()=>{ store.ans=ta.value; save(); };
+    box.appendChild(ta); inputs.push(ta);
+  }
+
+  const out=el("div"); box.appendChild(out);
+  const row=el("div","btnrow");
+  const check=el("button","btn","Check my answer");
+  const showModel=el("button","btn ghost","Show the model answer");
+  row.appendChild(check); row.appendChild(showModel); box.appendChild(row);
+
+  check.onclick=()=>{ out.innerHTML=""; out.appendChild(buildResult(pt,store)); };
+  showModel.onclick=()=>{ out.innerHTML=""; out.appendChild(modelBlock(pt)); out.appendChild(selfMark(pt,store)); };
+
+  return box;
+}
+
+function buildResult(pt,store){
+  const wrap=el("div","result");
+  let hits=0,total=0;
+  const list=el("div");
+
+  if(pt.fields){
+    pt.fields.forEach((f,i)=>{
+      const norm=normalise(store.fields[i]);
+      const ok = (store.fields[i]||"").trim()!=="" && f.need.every(g=>hasAny(norm,g));
+      total++; if(ok) hits++;
+      list.appendChild(mpRow(ok, f.label+" — "+f.model));
+    });
+  } else {
+    const norm=normalise(store.ans);
+    const blank=(store.ans||"").trim()==="";
+    (pt.mps||[]).forEach(mp=>{
+      let ok = !blank && scoreMP(norm,mp);
+      if(!ok && pt.exactOk){ const t=normalise(store.ans).trim(); if(pt.exactOk.indexOf(t)!==-1) ok=true; }
+      total++; if(ok) hits++;
+      list.appendChild(mpRow(ok,mp.t));
+    });
+  }
+
+  const cap = pt.cap || pt.marksOverride || pt.marks;
+  const suggested = pt.marksOverride ? (hits===total?1:0) : Math.min(hits,cap);
+
+  wrap.appendChild(el("h5",null,"What the mark scheme is looking for"));
+  wrap.appendChild(list);
+  const note = pt.cap && total>pt.cap
+    ? "You have hit "+hits+" of the "+total+" possible points. The question is worth "+pt.cap+", so any "+pt.cap+" of them is full marks."
+    : "You have hit "+hits+" of "+total+".";
+  wrap.appendChild(el("p",null,"<b>"+esc(note)+"</b> This checker looks for the words the mark scheme needs, so it can miss a right answer written another way — the model answer below is the thing to judge yourself against."));
+  wrap.appendChild(modelBlock(pt));
+  wrap.appendChild(selfMark(pt,store,suggested));
+  return wrap;
+}
+
+function mpRow(ok,text){
+  const r=el("div","mp "+(ok?"hit":"miss"));
+  r.appendChild(el("span","tick",ok?"✓":"·"));
+  r.appendChild(el("span",null,esc(text)));
+  return r;
+}
+
+function modelBlock(pt){
+  const m=el("div","model");
+  if(pt.fields && !pt.model){
+    m.innerHTML = pt.fields.map(f=>"<b>"+esc(f.label)+":</b> "+esc(f.model)).join("<br>");
+  } else {
+    m.innerHTML = "<b>Model answer.</b> "+esc(pt.model||"");
+  }
+  return m;
+}
+
+function selfMark(pt,store,suggested){
+  const max = pt.marksOverride || pt.marks;
+  const w=el("div","selfmark");
+  w.appendChild(el("span",null,"Now mark yourself honestly, out of <b>"+max+"</b>:"));
+  const inp=el("input"); inp.type="text"; inp.inputMode="numeric";
+  inp.setAttribute("aria-label","Your mark for question "+pt.id+" out of "+max);
+  inp.value = store.mark!=null ? store.mark : (suggested!=null?suggested:"");
+  if(store.mark==null && suggested!=null){ store.mark=suggested; save(); }
+  inp.oninput=()=>{
+    let v=parseInt(inp.value,10);
+    if(isNaN(v)){ store.mark=null; } else { v=Math.max(0,Math.min(max,v)); store.mark=v; }
+    save();
+  };
+  w.appendChild(inp);
+  w.appendChild(el("span",null,"<span style='color:var(--quiet)'>goes into My progress</span>"));
+  return w;
+}
+
+/* ==========================================================
+   PROGRESS
+   ========================================================== */
+function allParts(){ const out=[]; EXAM.forEach(Q=>Q.parts.forEach(p=>out.push(p))); return out; }
+
+function renderProgress(){
+  const p=$("#p-progress"); p.innerHTML="";
+  p.appendChild(el("div","intro","You finish Unit 8A three weeks or more before you are assessed on it. Nothing keeps this content in your head except coming back to it — so rate yourself every week and revise the reds."));
+
+  /* --- headline --- */
+  const parts=allParts();
+  let scored=0,marked=0;
+  const ao={AO1:0,AO2:0,AO3:0};
+  parts.forEach(pt=>{
+    const s=S.exam[pt.id];
+    const max=pt.marksOverride||pt.marks;
+    if(s && s.mark!=null){
+      scored+=s.mark; marked+=max;
+      if(pt.aoSplit){ const half=Math.floor(s.mark/2); ao.AO2+=half; ao.AO3+=s.mark-half; }
+      else ao[pt.ao]+=s.mark;
+    }
+  });
+  let qDone=0,qRight=0;
+  QUIZZES.forEach(Q=>Q.qs.forEach((q,i)=>{const v=S.quiz["w"+Q.week+"q"+i]; if(v!=null){qDone++; if(v===q.a)qRight++;}}));
+  const rungsDone=Object.values(S.rungs).filter(Boolean).length;
+
+  const h=el("div","card");
+  const stats=el("div","bigstat");
+  stats.appendChild(el("div","stat",'<div class="n">'+rungsDone+"/28</div><div class=\"l\">Knowledge organiser rungs ticked</div>"));
+  stats.appendChild(el("div","stat",'<div class="n">'+qRight+"/"+qDone+'</div><div class="l">Quiz questions right (of '+qDone+" answered)</div>"));
+  stats.appendChild(el("div","stat",'<div class="n">'+scored+"/"+(marked||PAPER_TOTAL)+'</div><div class="l">Exam marks you have given yourself</div>'));
+  if(marked) stats.appendChild(el("div","stat",'<div class="n">'+Math.round(scored/marked*100)+'%</div><div class="l">on the '+marked+" marks you have done</div>"));
+  h.appendChild(stats);
+  if(marked){
+    const aoRow=el("div","meta-row");
+    aoRow.appendChild(el("div","lbl","Assessment objectives so far"));
+    aoRow.appendChild(el("div",null,"AO1 recall <b>"+ao.AO1+"</b> · AO2 apply <b>"+ao.AO2+"</b> · AO3 analyse and evaluate <b>"+ao.AO3+"</b> &nbsp;<span style='color:var(--quiet)'>(the real paper is AO1 11, AO2 11, AO3 6)</span>"));
+    h.appendChild(aoRow);
+  }
+  p.appendChild(h);
+
+  /* --- weekly RAG grid --- */
+  const g=el("div","card");
+  g.appendChild(el("div","card-head",'<div class="code">Weekly self-check<small>Rate every criterion, every week. Watch yourself move.</small></div>'));
+  const gs=el("div","scroller"); gs.style.padding="0 18px";
+  const tb=el("table");
+  let head="<thead><tr><th>Code</th><th>What it covers</th>";
+  S.checkins.forEach(c=> head+="<th>"+esc(c.date)+"</th>");
+  head+="</tr></thead><tbody>";
+  const order=["8A1","8A2","8A3","WS6","8A4","8A5","8A6"];
+  order.forEach(code=>{
+    const c=criterionByCode(code);
+    head+="<tr><td><b>"+esc(code)+"</b></td><td>"+esc(c.title)+"</td>";
+    S.checkins.forEach((ci,idx)=>{
+      const v=ci.ratings[code]||"";
+      const col = v==="G"?"var(--green-soft)": v==="A"?"var(--amber-soft)": v==="R"?"var(--pink-soft)":"transparent";
+      head+='<td style="background:'+col+';text-align:center;font-weight:700" data-code="'+code+'" data-ci="'+idx+'">'+esc(v||"–")+"</td>";
+    });
+    head+="</tr>";
+  });
+  head+="</tbody>";
+  tb.innerHTML=head;
+  gs.appendChild(tb); g.appendChild(gs);
+
+  const grow=el("div","btnrow"); grow.style.padding="12px 18px 16px";
+  const nb=el("button","btn","Start a new weekly check-in");
+  nb.onclick=()=>{ S.checkins.push({date:today(),ratings:{}}); save(); renderProgress(); renderKO(); };
+  grow.appendChild(nb);
+  if(S.checkins.length){
+    const note=el("span",null,"<span style='color:var(--quiet);font-size:.85rem'>Rate each criterion on the Knowledge organiser tab — it fills the newest column.</span>");
+    grow.appendChild(note);
+  }
+  g.appendChild(grow);
+  if(!S.checkins.length) g.appendChild(el("div","empty","No check-ins yet. Start one, then rate all seven criteria on the Knowledge organiser tab."));
+  p.appendChild(g);
+
+  /* --- per criterion --- */
+  const perc={};
+  QUIZZES.forEach(Q=>Q.qs.forEach((q,i)=>{
+    const v=S.quiz["w"+Q.week+"q"+i]; if(v==null) return;
+    perc[q.c]=perc[q.c]||{d:0,r:0}; perc[q.c].d++; if(v===q.a) perc[q.c].r++;
+  }));
+  const exc={};
+  parts.forEach(pt=>{
+    const s=S.exam[pt.id]; const max=pt.marksOverride||pt.marks;
+    if(s && s.mark!=null){ exc[pt.c]=exc[pt.c]||{g:0,m:0}; exc[pt.c].g+=s.mark; exc[pt.c].m+=max; }
+  });
+
+  const cc=el("div","card");
+  cc.appendChild(el("div","card-head",'<div class="code">Criterion by criterion<small>Where the evidence says you are, not where you feel you are</small></div>'));
+  const ccs=el("div","scroller"); ccs.style.padding="0 18px 16px";
+  let ch="<table><thead><tr><th>Code</th><th>Criterion</th><th>Rungs</th><th>Quiz</th><th>Exam marks</th><th>Latest RAG</th></tr></thead><tbody>";
+  order.forEach(code=>{
+    const c=criterionByCode(code);
+    const r=["state","describe","explain","evaluate"].filter(k=>S.rungs[code+":"+k]).length;
+    const q=perc[code]; const e=exc[code];
+    const ci=latestCheckin(); const rag=ci&&ci.ratings[code]?ci.ratings[code]:"–";
+    ch+="<tr><td><b>"+esc(code)+"</b></td><td>"+esc(c.title)+"</td>"
+      +'<td><div class="bar"><i style="width:'+(r/4*100)+'%"></i></div>'+r+"/4</td>"
+      +"<td>"+(q? q.r+"/"+q.d : "–")+"</td>"
+      +"<td>"+(e? e.g+"/"+e.m : "–")+"</td>"
+      +"<td style='text-align:center;font-weight:700'>"+esc(rag)+"</td></tr>";
+  });
+  ch+="</tbody></table>"; ccs.innerHTML=ch; cc.appendChild(ccs); p.appendChild(cc);
+
+  /* --- revision list --- */
+  const todo=[];
+  order.forEach(code=>{
+    const c=criterionByCode(code);
+    const ci=latestCheckin();
+    const rag=ci?ci.ratings[code]:null;
+    const q=perc[code]; const e=exc[code];
+    const reasons=[];
+    if(rag==="R") reasons.push("you rated it red");
+    if(rag==="A") reasons.push("you rated it amber");
+    if(q && q.d>=2 && q.r/q.d<0.6) reasons.push("you got "+q.r+" of "+q.d+" quiz questions right");
+    if(e && e.m>=2 && e.g/e.m<0.6) reasons.push("you scored "+e.g+" of "+e.m+" on the paper");
+    const r=["state","describe","explain","evaluate"].filter(k=>S.rungs[code+":"+k]).length;
+    if(r<=1 && (q||e||rag)) reasons.push("only "+r+" of the four rungs ticked");
+    if(reasons.length) todo.push([code,c.title,reasons]);
+  });
+
+  const t=el("div","card");
+  t.appendChild(el("div","card-head",'<div class="code">Revise these next<small>Built from what you have actually done, not guessed</small></div>'));
+  if(todo.length){
+    const ul=el("ul","todo");
+    todo.forEach(([code,title,reasons])=>{
+      const li=el("li",null,"<b>"+esc(code)+" "+esc(title)+"</b> — "+esc(reasons.join(", "))+". Go back to the criterion card, read State it and Describe it, cover them, write them from memory, then check.");
+      ul.appendChild(li);
+    });
+    t.appendChild(ul);
+  } else {
+    t.appendChild(el("div","empty","Nothing flagged yet. Work through a quiz and a few exam questions and this list will fill itself in."));
+  }
+  p.appendChild(t);
+
+  const row=el("div","btnrow");
+  const pr=el("button","btn ghost","Print this page");
+  pr.onclick=()=>window.print();
+  const rs=el("button","btn ghost","Clear everything and start again");
+  rs.onclick=()=>{ if(confirm("This deletes every tick, rating, quiz answer and exam answer you have saved. Are you sure?")){ S={rungs:{},checkins:[],quiz:{},exam:{}}; try{localStorage.removeItem(KEY);}catch(e){} renderKO(); renderQuiz(); renderExam(); renderProgress(); } };
+  row.appendChild(pr); row.appendChild(rs); p.appendChild(row);
+}
+
+/* ==========================================================
+   GO
+   ========================================================== */
+buildTabs();
+renderKO();
+renderVocab();
+renderQuiz();
+renderExam();
+</script>
+</body>
+</html>
